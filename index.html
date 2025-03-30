@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>University Result Portal - Winter 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>University Result Portal</h1>
+        <p>Winter Supplementary/Regular Examination 2025</p>
+    </div>
+
+    <div class="container">
+        <h2>Check Your Result</h2>
+        <p>Please enter your details to view your examination results:</p>
+
+        <div class="form-group">
+            <label for="username">Full Name</label>
+            <input type="text" id="username" placeholder="Enter your full name as registered">
+        </div>
+
+        <div class="form-group">
+            <label for="prn">PRN Number</label>
+            <input type="text" id="prn" placeholder="Enter your PRN number">
+        </div>
+
+        <button onclick="checkResult()">View Result</button>
+
+        <div id="loader">
+            <img src="https://i.gifer.com/VAyR.gif" alt="Loading...">
+            <p id="loadingText">Initializing result portal...</p>
+        </div>
+
+        <div id="result"></div>
+
+        <div class="notice">
+            Note: Results are provisional and subject to verification. Please contact the examination department for any discrepancies.
+        </div>
+    </div>
+
+    <div class="admin-panel" id="adminPanel" onclick="showAdminLogin()">
+        👨‍💼 Admin Panel
+    </div>
+
+    <div class="admin-modal" id="adminModal">
+        <div class="admin-content">
+            <button class="close-admin" onclick="hideAdminPanel()">×</button>
+            <div id="adminLoginForm">
+                <h3>Admin Login</h3>
+                <div class="admin-login">
+                    <input type="password" id="adminPassword" placeholder="Enter admin password">
+                    <button onclick="checkAdminPassword()">Login</button>
+                    <p class="admin-error" id="adminError">Invalid password!</p>
+                </div>
+            </div>
+            <div id="adminContent" style="display: none;">
+                <h3>Result Check History</h3>
+                <ul class="result-list" id="resultList">
+                    <!-- Results will be populated here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert-modal" id="alertModal">
+        <div class="alert-content">
+            <h3>April Fool 😂</h3>
+            <p>We hope you enjoyed this little prank 😄</p>
+            <button class="alert-btn" onclick="hideAlert()">Got it</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
